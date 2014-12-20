@@ -14,7 +14,7 @@ Vostan
 + sudo apt-get install nodejs
 + sudo apt-get install npm
 + sudo npm update
-+ sudo npm install yo bower
++ sudo npm install -g yo bower
 + sudo npm install -g grunt-cli
 
 ## MAC
@@ -23,11 +23,13 @@ Vostan
 
 # Setup
 ## cd /remote
++ curl -sS https://getcomposer.org/installer | php
++ sudo mv composer.phar /usr/local/bin/composer
 + php composer.phar install
 + composer install
 
 ## cd /client
-+ sudo npm install
++ npm install
 + bower install
 + grunt build
 + grunt serve (for local run)
