@@ -39,7 +39,7 @@
 
   var config = {
     title : "Vostan ERP",
-    host : "http://localhost/erp_cleanup/public/api",
+    host : "",
     root : 1,
     defaultLang : "en",
     animationDelayMin : 0,
