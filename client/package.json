@@ -1,6 +1,6 @@
 {
-  "name": "medicale",
-  "version": "0.0.0",
+  "name": "vostan",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "connect-livereload": "~0.2.0",
