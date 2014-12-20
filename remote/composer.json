@@ -1,0 +1,21 @@
+{
+    "name": "instigate/vostan",
+    "description": "Vostan Framework",
+    "version": "1.0.0",
+    "type": "framework",
+    "homepage": "http://ggg.vostan.net",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Instigate CJSC",
+            "email": "info@instigatedesign.com",
+            "homepage": "http://ggg.instigate.am"
+        }
+    ],
+    "require": {
+        "slim/slim": "2.2.*"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}

@@ -1,0 +1,616 @@
+@font-face {
+  font-family: VostanWebFont;
+  src: url('assets/fonts/DejaVuSans-webfont.eot');
+  src: url('assets/fonts/DejaVuSans-webfont.eot?iefix') format('eot'), url('assets/fonts/DejaVuSans-webfont.woff') format('woff'), url('assets/fonts/DejaVuSans-webfont.ttf') format('truetype'), url('assets/fonts/DejaVuSans-webfont.svg#webfont') format('svg');
+}
+
+html, body {
+  color: #333333;
+  font-family: Lucida Sans, Lucida Grande, Arial, "Arian AMU", "Arial AMU", "GHEA Grapalat", Sylfaen, sans-serif !important;
+  font-size: 13px !important;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+body.wait, body.wait node {
+  cursor: wait !important;
+}
+
+node {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -o-user-select: none;
+  user-select: none;
+  background-color: #FFFFFF;
+  border: 1px #666666 solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+node.node-root, node.leaf {
+  cursor: auto;
+}
+
+node.node-root .info, node.node-root .par, node.leaf .info, node.leaf .par {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+div.query-nodes node .info, 
+div.query-nodes node .img,
+div#carousel-items node .info,
+div#carousel-items node .img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+node.node-root .img, node.leaf .img {
+  cursor: text;
+}
+
+#viewTab {
+  background-color: #FFFFFF;
+  height: 100%;
+  overflow: auto;
+}
+
+#viewTab.editMode {
+  background-color: #F5F5F5;
+}
+
+#vostanApp {
+  border: 1px solid #999900;
+  margin: 0;
+  padding: 0;
+  width: 1024px;
+  height: 700px;
+  position: relative;
+}
+
+#vostanApp.presentation, #vostanApp.presentation #vostanAppSmall {
+  border: none;
+}
+
+#vostanApp.presentation #vostanAppSize, #vostanApp.presentation #vostanAppSmallSize {
+  display: none;
+}
+
+#vostanAppSmall {
+  border: 1px solid #46804D;
+  margin: 0;
+  padding: 0;
+  width: 900px;
+  height: 600px;
+  position: absolute;
+}
+
+#vostanAppSize {
+  color: #999900;
+  font-size: 11px;
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+}
+
+#vostanAppSmallSize {
+  color: #46804D;
+  font-size: 11px;
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+}
+
+#vostanApp.presentation {
+  border: none;
+}
+
+#vostanContainer {
+  position: relative;
+}
+
+#vostanMain {
+  display: none;
+}
+
+#vostanStage {
+  position: absolute;
+  color: #666666;
+  line-height: 1px;
+}
+
+#vostanMap, #vostanEditStage {
+  position: relative;
+}
+
+#vostanStage, #vostanMap, #vostanEditStage {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#vostanControls img {
+  cursor: pointer;
+}
+
+#vostanApp node {
+  padding: 0;
+  position: absolute;
+  display: block;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#vostanApp node.node-proot {
+}
+
+#vostanApp node.node-root {
+}
+
+#vostanApp node .view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#vostanApp node.node-t .view .img, #vostanApp node.node-t .view .info, #vostanApp node.node-nt .view .img, #vostanApp node.node-n .view .img, #vostanApp node.node-n .view .par, #vostanApp node.node-ni .view .par, #vostanApp node.node-i .view .info, #vostanApp node.node-i .view .par, #vostanApp node.node-it .view .info {
+  display: none;
+}
+
+#vostanApp node .view .img {
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+#vostanApp node .view .img img {
+  width: 100%;
+}
+
+#vostanApp node .view .info {
+  font-family: VostanWebFont;
+  min-height: 30px;
+  min-width: 22px;
+  overflow: hidden;
+  position: absolute;
+  color: #336699;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#vostanApp node.node-n .query-node .view .img {
+  display: block;
+  top: 10px;
+  left: 10px; 
+  width: 40px;
+}
+
+#vostanApp .query-node .view img.query {
+  width: 100%;
+}
+
+.query-node .view .info {
+  min-height: 40px;
+  min-width: 22px;
+  top: 11px;
+  left: 60px;
+  right: 5px;
+  bottom: 8px;
+}
+
+.query-node .view .info_query {
+  left: 10px;
+}
+
+#vostanApp node .view .par {
+  font-family: VostanWebFont;
+  position: absolute;
+  font-size: 14px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+/*Edit Mode*/
+
+#vostanApp input[type="text"], #vostanApp textarea {
+  border: 1px solid #999999;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) inset;
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 1.4em;
+  outline: medium none;
+  padding: 6px;
+  width: 400px;
+}
+
+#vostanAccoutControls {
+  width: 60px;
+  right: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+#vostanControls {
+  right: 350px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  display: none;
+}
+
+#vostanNodeSearch {
+  width: 100px;
+  display: none;
+}
+
+.ui-autocomplete {
+  z-index: 30000000;
+}
+
+#editControls {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  width: 300px;
+  display: none;
+  z-index: 2000;
+  background-color: #F5F5F5;
+  border: 1px gray solid;
+  border-radius: 10px 10px 10px 10px;
+}
+
+#editControls a {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  background-color: #848B8B;
+  color: #f1f1f1;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+  z-index: 34000;
+}
+
+#editControls.node-root a.destroy, #editControls.node a.add {
+  display: none;
+}
+
+#vostanApp node.edits {
+  overflow-y: auto;
+}
+
+#vostanApp node .edits {
+  padding: 10px;
+}
+
+#vostanApp node.link-edits {
+  padding: 10px 10px 10px 10px;
+}
+
+#vostanApp node .edits input[type="text"], #vostanApp node .edits textarea {
+  width: 90%;
+  font-size: 14px;
+}
+
+#vostanApp node .view .params {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
+  display: none;
+  font-weight: normal;
+  font-size: 9pt;
+  line-height: 10px;
+  background-color: white;
+  font-family: Lucida Grande;
+  z-index: 100000000;
+}
+
+.edit-file-loading {
+  background-image: url(assets/ajax-loader-white.gif);
+  display: none;
+}
+
+#uplContainer {
+  display: none;
+  border: 1px solid #ababab;
+  background-color: #C0C0C0;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 90px;
+  left: 10px;
+  right: 10px;
+  height: 400px;
+  z-index: 10;
+  overflow: auto;
+}
+
+#uplContainer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin: 20px;
+}
+
+#uplContainer li {
+  margin: 10px;
+  float: left;
+}
+
+#uplContainer img.uploads {
+  width: 75px;
+  height: 75px;
+  border: 1px solid #ffffff;
+}
+
+#uplContainer img.uploads:hover {
+  border: 1px solid #ffff00;
+}
+
+#uplDialog {
+    display: none;
+    position: absolute;
+    padding: 15px;
+    top: 103px;
+    left: 13px;
+}
+
+#banner {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(242, 244, 246, 0.7);
+    -webkit-user-select: none;
+    position: absolute;
+    z-index: 5000;
+}
+
+.ui-resizable-handle {
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 25px;
+  height: 25px;
+  z-index: 1000 !important;
+}
+
+.ui-resizable-se {
+  background-image: url(assets/resizeicon-se.png);
+  right: -13px;
+  bottom: -13px;
+}
+
+.ui-resizable-sw {
+  background-image: url(assets/resizeicon-sw.png);
+  left: -13px;
+  bottom: -13px;
+}
+
+.ui-resizable-ne {
+  background-image: url(assets/resizeicon-ne.png);
+  right: -13px;
+  top: -13px;
+}
+
+.ui-resizable-nw {
+  background-image: url(assets/resizeicon-nw.png);
+  left: -13px;
+  top: -13px;
+}
+
+.ui-resizable-w, .ui-resizable-e {
+  right: -13px;
+  top: 50%;
+  -moz-transform: translate(0px,-13px);
+  -webkit-transform: translate(0px,-13px);
+  -ms-transform: translate(0px,-13px);
+  -o-transform: translate(0px,-13px);
+}
+
+.ui-resizable-n, .ui-resizable-s {
+  bottom: -13px;
+  left: 50%;
+  -moz-transform: translate(-13px,0px);
+  -webkit-transform: translate(-13px,0px);
+  -ms-transform: translate(-13px,0px);
+  -o-transform: translate(-13px,0px);
+}
+
+.ui-resizable-e {
+  background-image: url(assets/resizeicon-e.png);
+  right: -13px;
+}
+
+.ui-resizable-w {
+  background-image: url(assets/resizeicon-w.png);
+  left: -13px;
+}
+
+.ui-resizable-s {
+  background-image: url(assets/resizeicon-s.png);
+  bottom: -13px;
+}
+
+.ui-resizable-n {
+  background-image: url(assets/resizeicon-n.png);
+  top: -13px;
+}
+
+.ui-resizable {
+  overflow: visible !important;
+}
+
+.resizable-node, .resizable-element {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+#vostanApp .edits .singleFieldTags, #vostanApp .edits .singleFieldUsers, #vostanApp .edits .singleFieldViewers {
+  border: 1px solid #C6C6C6;
+  padding: 1px 5px;
+  float: left;
+  width: 99%;
+  margin: 1px 0;
+}
+
+#vostanApp .link-edits .singleFieldTags {
+  border: 1px solid #C6C6C6;
+  padding: 1px 5px;
+  float: left;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#vostanApp .link-edits #inputSingleField {
+  width: 60px;
+  font-size: 14px;
+}
+
+#vostanApp .singleFieldTags li, #vostanApp .singleFieldUsers li, #vostanApp .singleFieldViewers li {
+  display: block;
+  float: left;
+  margin: 2px 5px 2px 0;
+  list-style: none;
+}
+
+#vostanApp .singleFieldTags .tagit-choice, #vostanApp .singleFieldUsers .users-choice, #vostanApp .singleFieldViewers .viewers-choice {
+  background: none repeat scroll 0 0 #DEE7F8;
+  border: 1px solid #CAD8F3;
+  border-radius: 6px;
+  font-weight: normal;
+  padding: 0.3em 6px 0.4em 0.5em;
+}
+
+#vostanApp .singleFieldTags .tagit-choice .tagit-close, #vostanApp .singleFieldUsers .users-choice .users-close, #vostanApp .singleFieldViewers .viewers-choice .viewers-close {
+  margin-left: 5px;
+}
+
+#vostanApp .singleFieldTags .tagit-choice .text-icon, #vostanApp .singleFieldUsers .users-choice .text-icon, #vostanApp .singleFieldViewers .viewers-choice .text-icon {
+  color: #777777;
+  display: inline;
+  font-size: 16px;
+}
+
+#vostanApp .singleFieldTags .tagit-new, #vostanApp .singleFieldUsers .users-new, #vostanApp .singleFieldViewers .viewers-new {
+  padding: 0 4px 0 0;
+}
+
+#vostanApp .singleFieldTags .tagit-new #inputSingleField, #vostanApp .singleFieldUsers .users-new #inputSingleFieldUsers, #vostanApp .singleFieldViewers .viewers-new #inputSingleFieldViewers {
+  border: medium none;
+  box-shadow: none;
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+#vostanApp node div.tags {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 9px;
+}
+
+#vostanApp node div.exp {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-size: 14px;
+}
+
+#vostanApp node div.file {
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  font-size: 14px;
+}
+
+#vostanApp node div.file a {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background-image: url(assets/download-icon.png);
+}
+
+#vostanApp node.leaf, #vostanApp node.node-root {
+  cursor: auto;
+}
+
+#vostanApp node.leaf div.exp, #vostanApp node.node-root div.exp {
+  display: none;
+}
+
+#vostanAccountControls div {
+  float: right;
+}
+
+#vostanLang {
+  float: right;
+}
+
+#vostanLang div {
+  padding: 2px;
+  float: right;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+#vostanLang div.active-lang {
+  font-weight: bold;
+  opacity: 0.8;
+}
+.active-lang {
+  opacity: 0.8;
+}
+
+#toggleNode {
+  position: absolute;
+  top: 0;
+  right: 85px;
+}
+
+#lang-tab div {
+  padding: 2px;
+  float: left;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.query-nodes, #carousel-items {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 5px;
+  right: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#carousel-items node, .query-nodes node {
+  margin: 10px auto 10px auto;
+}
+
+.carousel {
+  min-height: 200px;
+}
+
+.imagetooltip {
+  font-size: 9px;
+}

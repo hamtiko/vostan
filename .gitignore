@@ -1,0 +1,7 @@
+.DS_Store
+client/node_modules
+public/*
+client/src/.tmp
+client/lib
+remote/vendor/*
+remote/composer.lock

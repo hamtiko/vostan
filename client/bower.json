@@ -1,0 +1,15 @@
+{
+  "name": "vostan",
+  "version": "1.0.0",
+  "dependencies": {
+    "kineticjs": "~5.1.0",
+    "jquery": "~2.1.1",
+    "jqueryui": "~1.11.2",
+    "tinymce": "~4.1.7",
+    "tag-it": "*",
+    "jqueryui-touch-punch": "*",
+    "underscore": "~1.7.0",
+    "json2": "*"
+  },
+  "devDependencies": {}
+}
