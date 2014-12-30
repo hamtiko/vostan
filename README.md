@@ -24,6 +24,19 @@ Vostan
 ## MAC
 
 ## Windows
++ Install Server
++ Configure server, please refer to configuration section
++ Install GIT (http://www.git-scm.com/download/win)
++ Get working copy using GIT, please refer to working copy section
++ Install Node.js
++ Update npm, run npm -g update
++ Install npm, run npm install in command prompt (power shell) in /client folder (if You will get "Error: ENOENT, stat 'C:\Users\<username>\AppData\Roaming\npm'" error create specified npm folder manually and run command again)
++ npm install -g yo
++ npm install -g yo bower
++ npm install -g yo grunt-cli
++ bower install
++ grunt build (ignore symlink error )
++ cmd /c mklink ".\api" "..\remote"
 
 # Setup
 ## working copy
